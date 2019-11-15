@@ -1,0 +1,264 @@
+.header {
+  position: relative;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 111rem;
+  margin: 0 auto;
+  @media all and (max-width: 1024px) {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  @media all and (min-width: 768px) and (max-width: 1024px) {
+    justify-content: space-between;
+  }
+  &-wrapper {
+
+    background-color: #0d0f26;
+  }
+  &__logo {
+    &-wrapper {
+      margin-right: 10.5rem;
+      @media all and (max-width: 767px) {
+        flex: 1;
+        margin-right: 5.5rem;
+      }
+      @media all and (min-width: 768px) and (max-width: 1024px) {
+        margin-right: 8.5rem;
+      }
+    }
+  }
+  &-menu {
+    display: flex;
+    align-items: center;
+    @media all and (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+    &-wrapper {
+      //flex: 1;
+      @media all and (max-width: 767px) {
+        padding: 2rem;
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(100% - 0.1rem);
+        width: 100%;
+        order: 3;
+        background: #0d0f26;
+        border-top: 0.2rem solid rgba(#0099e5,0.5);
+        z-index: 1000;
+      }
+      @media all and (min-width: 768px) and (max-width: 1024px) {
+        transform: translateX(-5rem);
+        order: 0;
+        flex: none;
+      }
+    }
+    & li {
+      position: relative;
+      margin-right: 6.5rem;
+      @media all and (max-width: 767px) {
+        width: calc(100% - 10rem);
+        margin: 0 auto;
+        padding: 2rem;
+        text-align: center;
+        border-bottom: 0.1rem solid rgba(#0099e5,0.2);
+      }
+      @media all and (min-width: 768px) and (max-width: 1024px) {
+        margin-right: 4rem;
+      }
+      &:last-of-type {
+        margin: 0 auto;
+        border-bottom: none;
+      }
+      & a {
+        padding: 0 0.5rem;
+        position: relative;
+        color: rgba(#d9f2ff,0.7);
+        font-family: "Gotham Pro";
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-decoration: none;
+        &:hover {
+          color: #30b2f2;
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            width: 1rem;
+            height: 0.1rem;
+            background-color: #30b2f2;
+          }
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 1rem;
+            height: 0.1rem;
+            background-color: #30b2f2;
+          }
+        }
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: 100%;
+          width: 0;
+          height: 0.1rem;
+          background-color: rgba(#49baf2,0.4);
+          transition: all 0.4s;
+        }
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 100%;
+          left: 100%;
+          width: 1rem;
+          height: 0.1rem;
+          background-color: rgba(#49baf2,0.4);
+          transition: all 0.4s;
+        }
+      }
+    }
+  }
+  &-switcher {
+    display: flex;
+    align-items: center;
+    &-wrapper {
+
+    }
+    & li {
+      position: relative;
+      &:first-of-type {
+        & a {
+          position: relative;
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-height: 100% ;
+            width: 0.2rem;
+            background-color: rgba(#ffffff,0.3);
+          }
+        }
+
+      }
+      & a {
+        padding: 0 2rem;
+        color: rgba(#d9f2ff,0.7);
+        font-family: "Gotham Pro";
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 6.5rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.4s;
+        &:hover {
+          color: #30b2f2;
+        }
+      }
+    }
+  }
+}
+
+.menu-bar {
+  margin: 0 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  @media all and (min-width: 768px) {
+    display: none;
+  }
+  &-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    @media all and (min-width: 768px) {
+      display: none;
+    }
+    &-inner {
+      position: absolute;
+      left: 4rem;
+    }
+  }
+  &.active {
+    &:before {
+      animation: slideLeft 0.2s 0.05s ease-out forwards;
+    }
+    &:after {animation: slideRight 0.2s 0.05s ease-out forwards}
+    & span {
+      animation: rotate45 0.2s ease-out forwards;
+      &:last-child {animation: rotate135 0.2s 0.2s ease-out forwards}
+    }
+  }
+  &.back {
+    &:before {
+      transform: translateX(-120%);
+      animation: slideBack 0.2s 0.05s ease-out forwards;
+    }
+    &:after {
+      transform: translateX(120%);
+      animation: slideBack 0.2s 0.05s ease-out forwards;
+    }
+    & span {
+      transform: rotate(-45deg);
+      animation: rotateBack 0.2s ease-out forwards;
+      &:last-child {
+        transform: rotate(-135deg);
+        animation: rotateBack 0.2s 0.2s ease-out forwards;
+      }
+    }
+  }
+  &:before {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 0.25rem;
+    background: #0099e5;
+  }
+  &:after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 0.25rem;
+    background: #0099e5;
+  }
+  & span {
+    display: block;
+    width: 3rem;
+    height: 0.2rem;
+    background: #0099e5;
+    margin: 1rem 0;
+    &:last-child {
+      opacity: 0;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 0.2rem;
+    }
+  }
+}
+@keyframes rotate135 {
+  from {
+    opacity: 1;
+    transform: rotate(-45deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-135deg);
+  }
+}
+@keyframes rotate45 {to {transform: rotate(-45deg)}}
+@keyframes rotateBack {to {transform: rotate(0)}}
+@keyframes slideRight {to {transform: translateX(122%)}}
+@keyframes slideLeft {to {transform: translateX(-150%)}}
+@keyframes slideBack {to {transform: translateX(0)}}

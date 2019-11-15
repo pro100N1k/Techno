@@ -1,0 +1,182 @@
+.fail {
+  &-section {
+    padding: 15rem 0 !important;
+    position: relative;
+    background: #03041a;
+    min-height: 75rem;
+    @media all and (max-width: 767px) {
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(#000,0.7);
+          z-index: 1;
+        }
+    }
+  }
+  &-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100rem;
+      height: 75rem;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60%;
+        height: 100%;
+        background-image: linear-gradient(to right, #03041a 0%, rgba(3, 4, 26, 0) 100%);
+        z-index: 6;
+      }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 43.6rem;
+        height: 75rem;
+        background-image: linear-gradient(to right, #03041a 0%, rgba(3, 4, 26, 0) 100%);
+        opacity: 0.6;
+        z-index: 5;
+      }
+    }
+  }
+  &-img {
+    @media all and (max-width: 1365px) {
+      display: none;
+    }
+    &--fig1 {
+      position: absolute ;
+      top: 4.5rem ;
+      left: 32rem;
+      z-index: 15;
+    }
+    &--fig2 {
+      position: absolute;
+      top: 9rem !important;
+      left: 45% !important;
+      z-index: 15;
+    }
+    &--fig3 {
+      position: absolute;
+      top:auto !important;
+      left: 21.5rem !important;
+      bottom: 25.5rem;
+      z-index: 15;
+    }
+    &--fig4 {
+      position: absolute;
+      top: 18.5rem !important;
+      left: 4rem !important;
+      z-index: 15;
+    }
+    &--fig5 {
+      position: absolute;
+      top: auto !important;
+      left: 50% !important;
+      transform: translateX(-50%);
+      bottom: 11rem;
+      z-index: 15;
+    }
+    &--fig6 {
+      position: absolute;
+      top: auto !important;
+      left: auto !important;
+      bottom: 0;
+      transform: translate(7.5rem, 55%);
+      z-index: 15;
+    }
+  }
+
+  &-content {
+    position: relative;
+    z-index: 100;
+    @media all and (max-width: 480px) {
+      max-width: 100%;
+    }
+    @media all and (min-width: 481px)  {
+      max-width: 52.5rem;
+      width: 100%;
+    }
+
+    &__title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 4.5rem;
+      color: #ffffff;
+      font-family: "Gotham Pro";
+      font-size: 8rem;
+      font-weight: 700;
+      &:before {
+        content: 'Technostaff';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        transform: translateX(-50%);
+        opacity: 0.1;
+        color: #ffffff;
+        font-family: "Gotham Pro";
+        font-size: 11.4rem;
+        font-weight: 700;
+        text-transform: none;
+        pointer-events: none;
+        @media all and (max-width: 420px) {
+          left: 0;
+          transform: translateX(0);
+          font-size: 8rem;
+        }
+        @media all and (min-width: 421px) and (max-width: 480px) {
+          left: 0;
+          transform: translateX(0);
+          font-size: 10rem;
+        }
+        @media all and (min-width: 481px) and (max-width: 1024px) {
+          left: 0;
+          transform: translateX(0);
+          font-size: 10rem;
+        }
+        @media all and (min-width: 1025px) and (max-width: 1365px) {
+          left: 0;
+          transform: translateX(0);
+        }
+        @media all and (min-width: 1366px) and (max-width: 1920px) {
+          left: 0;
+          transform: translateX(-10%);
+        }
+      }
+    }
+    &__text {
+      margin-bottom: 10rem;
+      color: rgba(#d9f2ff,0.8);
+      font-family: "Gotham Pro";
+      font-size: 2.2rem;
+      font-weight: 300;
+      line-height: 3.5rem;
+    }
+  }
+  &-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh;
+    .fail-section {
+
+      flex: 100%;
+    }
+  }
+}

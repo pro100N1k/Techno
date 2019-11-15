@@ -1,0 +1,47 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  width: 29.5rem;
+  height: 7rem;
+  color: #ffffff;
+  font-family: "Gotham Pro";
+  font-size: 2rem;
+  font-weight: 400;
+  box-shadow: 0 0.8rem 2rem rgba(46, 168, 230, 0.23);
+  background-image: linear-gradient(to right, #30b2f2 0%, #0099e6 100%);
+  text-decoration: none;
+  border: none;
+  transition: all 0.4s;
+  &:hover {
+    box-shadow: 0 1.5rem 2rem rgba(46, 168, 230, 0.25);
+    background-image: linear-gradient(to right, #30b2f2 0%, #30b2f2 100%);
+    cursor: pointer;
+  }
+  &--icon {
+    padding: 2.5rem 3.8rem 2.5rem 6.5rem;
+    justify-content: space-between;
+    &:after {
+      content: '';
+      background: url("../img/arrow.svg");
+      display: block;
+      position: absolute;
+      width: 3.2rem;
+      height: 1.5rem;
+      top: 50%;
+      right: 3.8rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--modal {
+    width: 24.5rem;
+    justify-content: center;
+    padding: 0;
+    &:after {
+      display: none;
+    }
+  }
+}

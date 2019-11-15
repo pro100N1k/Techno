@@ -1,0 +1,179 @@
+.calculate {
+  padding-bottom: 4rem;
+  border-bottom: 0.1rem solid rgba(#03041a, 0.1);
+  margin-bottom: 5rem;
+  &-section {
+    position: relative;
+    background-color: #f2f5fa;
+    .img-bg {
+      @media all and (max-width: 1365px) {
+        display: none;
+      }
+     &:nth-of-type(1) {
+       position: absolute;
+       left: 0;
+       bottom: 0;
+     }
+      &:nth-of-type(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+  &-row {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    @media all and (max-width: 1023px) {
+        flex-wrap: wrap;
+    }
+    &__title {
+      margin-right: 3rem;
+      width: 25.5rem;
+      color: #03041a;
+      font-family: "Gotham Pro";
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 2.4rem;
+      @media all and (max-width: 480px) {
+        margin-bottom: 2rem;
+      }
+      @media all and (min-width: 481px) and (max-width: 1023px) {
+        margin-bottom: 2rem;
+      }
+    }
+    &-calc {
+      display: flex;
+      align-items: center;
+      @media all and (max-width: 600px) {
+        margin-bottom: 1.5rem;
+        width: 100%;
+        justify-content: space-between;
+      }
+      &-wrapper {
+        width: 82.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media all and (max-width: 600px) {
+          width: 100%;
+          flex-wrap: wrap;
+        }
+      }
+      &__title {
+        margin-right: 3rem;
+        color: rgba(#03041a, 0.8);
+        font-family: "Gotham Pro";
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
+      &__select {
+        &-wrapper {
+          width: 82.5rem;
+        }
+      }
+    }
+  }
+  &-block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 18rem;
+    height: 6rem;
+    border: 0.1rem solid #c5dfed;
+    background-color: #ffffff;
+    @media all and (min-width: 420px) and (max-width: 600px) {
+      width: 30rem;
+    }
+    &-input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 7.5rem;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: none;
+      color: #4b89a6;
+      font-family: "Gotham Pro";
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    &-icon {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      width: 6rem;
+      height: 6rem;
+      color: #30b2f2;
+      font-size: 2.3rem;
+      opacity: 0.7;
+      transition: all 0.3s;
+      font-weight: 200;
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+        background-color: rgba(#30b2f2, 0.1);
+      }
+      &__minus {
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 0.1rem;
+          height: 2rem;
+          background-color: rgba(#acd2e5, 0.5);
+        }
+      }
+      &__plus {
+        right: 0;
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 0.1rem;
+          height: 2rem;
+          background-color: rgba(#acd2e5, 0.5);
+        }
+      }
+    }
+  }
+  &-sum {
+    display: flex;
+    align-items: center;
+    &--bottom {
+      margin-top: 5em;
+    }
+    &__title {
+      margin-right: 2rem;
+      color: #03041a;
+      font-family: "Gotham Pro";
+      font-size: 2.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    &__value {
+      font-size: 4rem;
+      font-weight: 700;
+      &-wrapper {
+        color: #30b2f2;
+        text-shadow: 0 0.7rem 1.2rem rgba(48, 178, 242, 0.25);
+        font-size: 2.1rem;
+        font-family: "Gotham Pro";
+        font-weight: 600;
+      }
+    }
+  }
+}
